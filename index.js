@@ -3,6 +3,9 @@ const app = express();
 const authRouter = require("./routers/authRouter");
 const articlesRouter = require("./routers/articlesRouter");
 
+// middleware to transform data to json
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("hello World!");
 });
