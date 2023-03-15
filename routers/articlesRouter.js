@@ -1,6 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
+// middleware to tell request time
+router.use((req, res, next) => {
+  console.log("Time:" + Date.now());
+  next();
+});
+
 router.get("/articles", (req, res) => {
   console.log(req.query);
   res.send("Articles Page!");
