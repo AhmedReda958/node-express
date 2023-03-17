@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const authRouter = require("./routers/authRouter");
@@ -19,3 +20,5 @@ const port = 8000;
 app.listen(port, () => {
   console.log("this app is listening to port: " + port);
 });
+
+mongoose.connect("mongodb://127.0.0.1:27017/express");
